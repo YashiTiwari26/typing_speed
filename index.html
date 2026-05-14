@@ -1,0 +1,105 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed Test</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Typing Speed Test</h1>
+
+        <!-- TIME BUTTONS -->
+        <div class="time-buttons">
+            <button class="time-btn" data-time="15">15s</button>
+            <button class="time-btn" data-time="30">30s</button>
+            <button class="time-btn active" data-time="60">60s</button>
+            <button class="time-btn" data-time="120">120s</button>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats">
+            <p>Time: <span id="time">60</span>s</p>
+            <p>WPM: <span id="wpm">0</span></p>
+            <p>Accuracy: <span id="accuracy">0</span>%</p>
+            <p>Mistakes: <span id="mistakes">0</span></p>
+        </div>
+
+        <!-- TEXT -->
+        <div class="text-display" id="textDisplay"></div>
+
+        <!-- INPUT -->
+        <textarea id="inputField" placeholder="Start typing here..."></textarea>
+
+        <!-- BUTTON -->
+        <button id="restartBtn">Restart Test</button>
+
+        <!-- RESULT -->
+        <div class="result-box" id="resultBox">
+
+            <h2>Test Result</h2>
+
+            <div class="circle-container">
+
+                <div class="circle-card">
+
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" id="wpmCircle"></circle>
+                    </svg>
+
+                    <h3 id="finalWpm">0</h3>
+                    <p>WPM</p>
+
+                </div>
+
+                <div class="circle-card">
+
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" id="accuracyCircle"></circle>
+                    </svg>
+
+                    <h3 id="finalAccuracy">0%</h3>
+                    <p>Accuracy</p>
+
+                </div>
+
+            </div>
+
+            <div class="result-stats">
+                <p>Mistakes: <span id="finalMistakes">0</span></p>
+            </div>
+
+            <canvas id="resultChart"></canvas>
+
+        </div>
+
+        <!-- LEADERBOARD -->
+        <div class="leaderboard">
+
+            <h2>Leaderboard</h2>
+
+            <p>Best WPM: <span id="bestWpm">0</span></p>
+            <p>Best Accuracy: <span id="bestAccuracy">0</span>%</p>
+
+        </div>
+
+    </div>
+
+    <script src="para.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
